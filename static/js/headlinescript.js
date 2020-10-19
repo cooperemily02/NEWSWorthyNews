@@ -13,7 +13,7 @@ function submitArticleRequest(){
         let i = 0;
        data.articles.forEach(article=> {
            //createArticle(article.title, article.author, new Date(article.date), article.description, article.url, article.urltoImage);
-           var a = li.createElement('a');
+           var a = document.createElement('a');
            a.setAttribute('href', article.url)
            a.setAttribute('target', "_blank");
            a.setAttribute('style', 'font-size:40px')
