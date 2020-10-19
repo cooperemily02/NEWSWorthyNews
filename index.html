@@ -1,23 +1,19 @@
 <html>
 <head>
-    <title>
-        //index.html
-        News App
-    </Title>
-    <link rel="stylesheet" type = "text/css" href = "../static/css/stylesheet.css">
+    <link href="../static/css/headlinestylesheet.css" type = "text/css"/>
+
 </head>
 <body>
-    <form class = "search" action = "">
-        <input class = "input" type = "text" />
-        <input type = "submit" />
-    </form>
-    <div class="topnav">
-      <a class="active" href="">Home</a>
-      <a href="entertainment">Entertainment</a>
-      <a href="sports">Sports</a>
-      <a href = "technology">Technology</a>
+    <div class = "searchbar">
+        <form class = "search" action = " ">
+            <input type = "text" id = "searchbar" placeholder = "search something...">
+            <button type="submit" id = "submitbutton" onclick = "submitArticleRequest(); return false;">Find Articles!</button>
+
+        </form>       
     </div>
-    <p> Welcome to the worst news website ever. Seriously go to CNN or something </p>
-    <script src="/static/js/script.js"></script>
+    <p id = "articlepara">
+
+    </p>
+<script src = "../static/js/headlinescript.js"> </script>
 </body>
 </html>
