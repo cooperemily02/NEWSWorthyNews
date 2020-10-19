@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/stylesheet.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href="entertainment">Entertainment</a>
+      <a href="sports">Sports</a>
+      <a href = "technology">Technology</a>
+    </div>
+    
+    <div class="header">
+      <h1>Entertainment</h1>
+    </div>
+    
+        {% for element in myarticles%}
+        <div class = "card">
+            <a href = {{element}} target = "_blank"> <br> {{loop.index}}. {{mytitles[loop.index]}} </a>
+            <br>
+            <p style="margin-left: 40px"> Source: {{mysources[loop.index]}}</p>
+            <p style="margin-left: 40px"> Author: {{myauthors[loop.index]}}</p>
+            <p style="margin-left: 40px"> Date: {{mydates[loop.index]}}</p>
+            <p style="margin-left: 40px"> Description: {{mydescriptions[loop.index]}}</p>
+            <img src= {{myimages[loop.index]}} alt="Bleh">
+            {% endfor %}
+    </div>
+    
+</body>
+</html>
