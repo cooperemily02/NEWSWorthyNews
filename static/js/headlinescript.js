@@ -1,9 +1,14 @@
 let li = document.createElement('li');
 let articles = document.querySelector('#articlelist')
-function submitArticleRequest(){
+document.getElementById('submitbutton').onclick = function submitArticleRequest(){
+    let topic = document.getElementById("searchbar").value;
+    if(topic == " " || topic == null)
+    {
+        window.alert("Enter something bitch");
+        return false;
+    }
     submitbutton.style.visibility = 'hidden';
     searchbar.style.visibility = 'hidden';
-    let topic = document.getElementById("searchbar").value;
     let url = 'http://newsapi.org/v2/everything?' +
               'q=' + topic + '&' +
               'sortBy=popularity&' +
@@ -60,6 +65,7 @@ function submitArticleRequest(){
          })
         })
     console.log(topic);
+    return false;
     }
 
 
