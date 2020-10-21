@@ -1,4 +1,5 @@
 let li = document.createElement('li');
+li.setAttribute('id', "listofarticles");
 let articles = document.querySelector('#articlelist')
 document.getElementById('submitbutton').onclick = function submitArticleRequest(){
     let topic = document.getElementById("searchbar").value;
@@ -21,45 +22,55 @@ document.getElementById('submitbutton').onclick = function submitArticleRequest(
        data.articles.forEach(article=> {
         //if(article.content.includes("entertainment") || article.content.includes("technology") || article.content.includes("sports"))
         //{
-           
-            var container = document.createElement('div');
-            container.setAttribute("class", "article");
-            document.body.appendChild(container);
+            let authora = article.author;
+            let titlea = article.title;
+            let urla = article.url;
+            let imgurla = article.urlToImage;
+            let descriptiona = article.description;
+            let datea = article.publishedAt;
+
+            var articlecomponents = document.createElement('li');
+            articlecomponents.setAttribute('id', "singlearticle");
 
            //Article title and link
-           var a = document.createElement('a');
-           a.setAttribute('href', article.url)
-           a.setAttribute('target', "_blank");
-           a.setAttribute('style', 'font-size:40px')
-           a.innerHTML = article.title;
-           a.setAttribute("text-align", "center");
-           document.body.appendChild(a);
-           document.body.appendChild(document.createElement("br"));
+           
+           var atitle = document.createElement('a');
+           atitle.setAttribute('href', article.url)
+           atitle.setAttribute('target', "_blank");
+           atitle.setAttribute('style', 'font-size:30px')
+           atitle.innerHTML = titlea;
+           atitle.setAttribute("text-align", "center");
+           articlecomponents.appendChild(atitle);
+           //document.body.appendChild(document.createElement("br"));
 
            //Author
-           var d = document.createElement('p');
-           d.innerHTML = article.author;
-           document.body.appendChild(d);
-           document.body.appendChild(document.createElement("br"));
+           var aauthor = document.createElement('p');
+           aauthor.setAttribute("style", "font-size:20px");
+           aauthor.innerHTML = "Author: " + authora;
+           articlecomponents.appendChild(aauthor);
+           //document.body.appendChild(document.createElement("br"));
 
            //Image
-           if (article.urlToImage!=null)
+           if (imgurla!=null)
            {
-            var b = document.createElement("img");
-            b.src = article.urlToImage;
-            document.body.appendChild(b);
-            document.body.appendChild(document.createElement("br"));
+            var aimg = document.createElement("img");
+            aimg.src = imgurla;
+            articlecomponents.appendChild(aimg);
+            //document.body.appendChild(document.createElement("br"));
            }
 
            //Description
-           var c = document.createElement('p');
-           c.innerHTML = "Description: " + article.description
-           document.body.appendChild(c);
+           var adescription = document.createElement('p');
+           adescription.innerHTML = "Description: " + descriptiona;
+           articlecomponents.appendChild(adescription);
 
            //Date
-           var d = document.createElement('p');
-           d.innerHTML = "Published: " + new Date(article.publishedAt);
-           document.body.appendChild(d);
+           var adate = document.createElement('p');
+           adate.innerHTML = "Published: " + new Date(datea);
+           articlecomponents.appendChild(adate);
+
+           li.appendChild(articlecomponents);
+           document.body.appendChild(li);
         //}
         
          })
@@ -67,5 +78,6 @@ document.getElementById('submitbutton').onclick = function submitArticleRequest(
     console.log(topic);
     return false;
     }
+
 
 
