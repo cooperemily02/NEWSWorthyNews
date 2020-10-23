@@ -3,11 +3,6 @@ li.setAttribute('id', "listofarticles");
 let articles = document.querySelector('#articlelist')
 document.getElementById('submitbutton').onclick = function submitArticleRequest(){
     let topic = document.getElementById("searchbar").value;
-    if(topic == " " || topic == null)
-    {
-        window.alert("Enter something bitch");
-        return false;
-    }
     submitbutton.style.visibility = 'hidden';
     searchbar.style.visibility = 'hidden';
     let url = 'http://newsapi.org/v2/everything?' +
