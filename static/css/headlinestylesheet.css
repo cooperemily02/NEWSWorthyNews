@@ -6,35 +6,35 @@
 
 .searchbar input[type = text]
 {
-    position: fixed;
-    padding: 8px;
-    border-color: lightpink;
-    border: 1px;
-    top:50%;
-    left:50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    padding:5px;
+    border: 2px solid;
+    border-radius: 4px;
+    border-color: lightgray;
     font-size: 17px;
+    margin-top: 5px;
+    display: inline-block;
 }
 .searchbar button
 {
-    position: fixed;
+   display: inline-block;
     padding: 10px;
     border: none;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: 90px;
     font-size: 17px;
     background: #ddd;
     font-size: 17px;
     cursor: pointer;  
 }
-.header {
-    padding: 30px;
-    text-align: center;
-    background: white;
-  }
+
+html {
+    scroll-behavior: smooth;
+   }
+
+#block
+{
+    display:block;
+}
+
+  
 
 .header h1 {
     font-size: 50px;
@@ -64,6 +64,29 @@ img{
   
 }
 
+#totop
+{
+  display: none; /* Hidden by default */
+  position: fixed !important; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  outline: none;
+  border: 1px solid; /* Remove borders */
+  border-color: black;
+  background-color: hotpink; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px; /* Some padding */
+  border-radius: 50px; /* Rounded corners */
+  font-size: 30px; /* Increase font size */
+}
+
+#totop:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+
 a:hover 
 {
   background-color: rgba(251, 212, 255, 0.856);
@@ -76,6 +99,61 @@ a:hover
     padding-bottom: 5px;
 }
 
+#category
+{
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: #fff; 
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
 
+#gotoarticles
+{
+    visibility: hidden;
+    background-color: blue ;
+    color: white;
+    display:inline-block;
+    
+}
 
+#searchagain
+{
+    visibility: hidden;
+    background-color:lightgrey;
+    display:inline-block;
+}
 
+.bg-image {
+    background-image: url(https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_1280.jpg);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-text {
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    border: 3px double #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
