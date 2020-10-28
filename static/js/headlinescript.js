@@ -21,7 +21,7 @@ function submitArticleRequest(){
     pcategory.innerText = "Showing articles pertaining to: " + mycategory + ". \n With keyword: " + topic + ".";
 
    li.appendChild(pcategory);
-    let url = 'http://newsapi.org/v2/top-headlines?' +
+    let url = 'https://newsapi.org/v2/top-headlines?' +
               'category=' + mycategory + '&' +
               'q=' + topic + '&' +
               'apiKey=78b9d599c4f94f8fa3afb1a5458928d6';
