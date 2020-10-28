@@ -78,14 +78,20 @@ function submitArticleRequest(){
            }
 
            //Description
-           var adescription = document.createElement('p');
-           adescription.innerHTML = "Description: " + descriptiona;
-           articlecomponents.appendChild(adescription);
+          if(descriptiona!=null)
+          {
+              var adescription = document.createElement('p');
+              adescription.innerHTML = "Description: " + descriptiona;
+              articlecomponents.appendChild(adescription);
+          }
 
            //Date
-           var adate = document.createElement('p');
-           adate.innerHTML = "Published: " + new Date(datea);
-           articlecomponents.appendChild(adate);
+          if(datea!=null)
+          {
+              var adate = document.createElement('p');
+              adate.innerHTML = "Published: " + new Date(datea);
+              articlecomponents.appendChild(adate);
+          }
 
            li.appendChild(articlecomponents);
            document.body.appendChild(li);
