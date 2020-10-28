@@ -24,7 +24,6 @@ function submitArticleRequest(){
     let url = 'https://newsapi.org/v2/top-headlines?' +
               'category=' + mycategory + '&' +
               'q=' + topic + '&' +
-              'country=us&'
               'apiKey=78b9d599c4f94f8fa3afb1a5458928d6';
     fetch(url).then((res)=>{
         return res.json();
